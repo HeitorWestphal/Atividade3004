@@ -1,7 +1,7 @@
 
 package principal;
 
-import frames.FrmMenuMain;
+import view.FrmMenuMain;
 
 public class Principal {
 
