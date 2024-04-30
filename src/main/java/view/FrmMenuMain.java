@@ -92,6 +92,8 @@ public class FrmMenuMain extends javax.swing.JFrame {
 
     private void JMenuItemCadastrarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItemCadastrarAlunoActionPerformed
         // TODO add your handling code here:
+        FrmCadastroAluno telaCadastro = new FrmCadastroAluno();
+        telaCadastro.setVisible(true);
     }//GEN-LAST:event_JMenuItemCadastrarAlunoActionPerformed
 
     /**
