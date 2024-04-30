@@ -1,21 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
+import model.Aluno;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author 1072410915
- */
 public class FrmCadastroAluno extends javax.swing.JFrame {
+
+    private Aluno objetoaluno; // cria o vínculo com Aluno.java
+
     /**
      * Creates new form FrmCadastroAluno
      */
     public FrmCadastroAluno() {
         initComponents();
+        this.objetoaluno = new Aluno(); // carrega o objeto de aluno
     }
 
     /**
