@@ -88,6 +88,8 @@ public class FrmMenuMain extends javax.swing.JFrame {
 
     private void JMenuItemGerenciarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItemGerenciarAlunoActionPerformed
         // TODO add your handling code here:
+        FrmGerenciarAluno telaGerenciar = new FrmGerenciarAluno();
+        telaGerenciar.setVisible(true);
     }//GEN-LAST:event_JMenuItemGerenciarAlunoActionPerformed
 
     private void JMenuItemCadastrarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItemCadastrarAlunoActionPerformed
