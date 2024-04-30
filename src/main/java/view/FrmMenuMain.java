@@ -59,6 +59,11 @@ public class FrmMenuMain extends javax.swing.JFrame {
         jMenuArquivo.add(JMenuItemGerenciarAluno);
 
         jMenuItemSair.setText("Sair");
+        jMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSairActionPerformed(evt);
+            }
+        });
         jMenuArquivo.add(jMenuItemSair);
 
         jMenuBar1.add(jMenuArquivo);
@@ -97,6 +102,11 @@ public class FrmMenuMain extends javax.swing.JFrame {
         FrmCadastroAluno telaCadastro = new FrmCadastroAluno();
         telaCadastro.setVisible(true);
     }//GEN-LAST:event_JMenuItemCadastrarAlunoActionPerformed
+
+    private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItemSairActionPerformed
 
     /**
      * @param args the command line arguments
