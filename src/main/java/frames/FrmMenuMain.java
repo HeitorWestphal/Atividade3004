@@ -26,7 +26,47 @@ public class FrmMenuMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenuArquivo = new javax.swing.JMenu();
+        JMenuItemCadastrarAluno = new javax.swing.JMenuItem();
+        JMenuItemGerenciarAluno = new javax.swing.JMenuItem();
+        jMenuItemSair = new javax.swing.JMenuItem();
+        jMenuSobre = new javax.swing.JMenu();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jMenuArquivo.setText("Arquivo");
+        jMenuArquivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuArquivoActionPerformed(evt);
+            }
+        });
+
+        JMenuItemCadastrarAluno.setText("Cadastrar Aluno");
+        JMenuItemCadastrarAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMenuItemCadastrarAlunoActionPerformed(evt);
+            }
+        });
+        jMenuArquivo.add(JMenuItemCadastrarAluno);
+
+        JMenuItemGerenciarAluno.setText("Gerenciar Aluno");
+        JMenuItemGerenciarAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMenuItemGerenciarAlunoActionPerformed(evt);
+            }
+        });
+        jMenuArquivo.add(JMenuItemGerenciarAluno);
+
+        jMenuItemSair.setText("Sair");
+        jMenuArquivo.add(jMenuItemSair);
+
+        jMenuBar1.add(jMenuArquivo);
+
+        jMenuSobre.setText("Sobre");
+        jMenuBar1.add(jMenuSobre);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -36,11 +76,23 @@ public class FrmMenuMain extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 277, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuArquivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuArquivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuArquivoActionPerformed
+
+    private void JMenuItemGerenciarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItemGerenciarAlunoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JMenuItemGerenciarAlunoActionPerformed
+
+    private void JMenuItemCadastrarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItemCadastrarAlunoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JMenuItemCadastrarAlunoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +130,11 @@ public class FrmMenuMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem JMenuItemCadastrarAluno;
+    private javax.swing.JMenuItem JMenuItemGerenciarAluno;
+    private javax.swing.JMenu jMenuArquivo;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItemSair;
+    private javax.swing.JMenu jMenuSobre;
     // End of variables declaration//GEN-END:variables
 }
