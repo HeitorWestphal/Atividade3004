@@ -1,19 +1,25 @@
 package model;
+
 public class Pessoa {
+
+    // Atributos
     private int id;
     private String nome;
     private int idade;
-    
-    public Pessoa(){
+
+    // Construtor de Objeto Vazio
+    public Pessoa() {
         this(0, "", 0);
     }
-    
+
+    // Construtor de Objeto, com parâmetros
     public Pessoa(int id, String nome, int idade) {
         this.id = id;
         this.nome = nome;
         this.idade = idade;
     }
-
+        
+    // Métodos GET e SET
     public int getId() {
         return id;
     }
@@ -37,6 +43,8 @@ public class Pessoa {
     public void setIdade(int idade) {
         this.idade = idade;
     }
-    
-    
+    @Override
+    public String toString() {
+        return "id=" + id + ", nome=" + nome + ", idade=" + idade;
+    }
 }
