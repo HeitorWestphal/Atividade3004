@@ -1,12 +1,15 @@
 package model;
 
-import java.util.ArrayList;
 import dao.AlunoDAO;
+import java.util.ArrayList;
+import model.Pessoa;
 
 public class Aluno extends Pessoa {
 
+    // Atributos
     private String curso;
     private int fase;
+    AlunoDAO dao;
 
     // Construtor de Objeto Vazio
     public Aluno() {
@@ -18,6 +21,7 @@ public class Aluno extends Pessoa {
         super(id, nome, idade);
         this.curso = curso;
         this.fase = fase;
+        dao = new AlunoDAO();
     }
 
     // Métodos GET e SET
@@ -39,60 +43,46 @@ public class Aluno extends Pessoa {
 
     @Override
     public String toString() {
-        return super.toString() + "curso=" + curso
-                + ", fase=" + fase;
+        return super.toString() + "curso=" + curso + ", fase=" + fase;
     }
 
-    /* ABAIXO OS MÉTODOS PARA USO JUNTO COM O DAO SIMULANDO
-    A ESTRUTURA EM CAMADAS PARA USAR COM BANCOS DE DADOS. */
+    /*  ABAIXO OS MéTODOS PARA USO JUNTO COM O DAO
+        SIMULANDO A ESTRUTURA EM CAMADAS PARA USAR COM BANCOS DE DADOS.
+     */
     // Retorna a Lista de Alunos(objetos)
     public ArrayList<Aluno> getMinhaLista() {
-        return AlunoDAO.getMinhaLista();
+        return dao.getMinhaLista();
     }
 
     // Cadastra novo aluno
     public boolean insertAlunoBD(String nome, int idade, String curso, int fase) {
         int id = this.maiorID() + 1;
         Aluno objeto = new Aluno(id, nome, idade, curso, fase);
-        getMinhaLista().add(objeto);
+        dao.insertAlunoBD(objeto);
         return true;
+
     }
 
-    // Deleta um aluno específico pelo seu campo ID
+    // Deleta um aluno especÍfico pelo seu campo ID
     public boolean deleteAlunoBD(int id) {
-        int indice = this.procuraIndice(id);
-        getMinhaLista().remove(indice);
+        dao.deleteAlunoBD(id);
         return true;
     }
 
-    // Edita um aluno específico pelo seu campo ID
+    // Edita um aluno especÍfico pelo seu campo ID
     public boolean updateAlunoBD(int id, String nome, int idade, String curso, int fase) {
         Aluno objeto = new Aluno(id, nome, idade, curso, fase);
-        int indice = this.procuraIndice(id);
-        getMinhaLista().set(indice, objeto);
+        dao.updateAlunoBD(objeto);
         return true;
     }
 
-    // procura o INDICE de objeto da minhaLista que
-    // contem o ID enviado.
-    private int procuraIndice(int id) {
-        int indice = -1;
-        for (int i = 0; i < getMinhaLista().size(); i++) {
-            if (getMinhaLista().get(i).getId() == id) {
-                indice = i;
-            }
-        }
-        return indice;
-    }
-
-    // carrega dados de um aluno específico pelo seu ID
+    // carrega dados de um aluno especÍfico pelo seu ID
     public Aluno carregaAluno(int id) {
-        int indice = this.procuraIndice(id);
-        return getMinhaLista().get(indice);
+        return (Aluno) dao.carregaAluno(id);
     }
 
     // retorna o maior ID da nossa base de dados
     public int maiorID() {
-        return AlunoDAO.maiorID();
+        return dao.maiorID();
     }
 }
